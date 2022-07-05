@@ -1,0 +1,53 @@
+body {
+    font-family: Verdana, Geneva, Tahoma, sans-serif;
+    
+}
+
+.header {
+    text-align: center;
+    font-weight: bold;
+    font-size: 50px;
+}
+
+.main {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 800px;
+    margin-bottom: 70px;
+}
+
+.calculator {
+    background-color: grey;
+}
+
+.display {
+    height: 10px;
+    font-size: 40px;
+    text-align: right;
+    margin: 15px 10px 10px 10px;
+    padding: 50px;
+    background-color: white;
+}
+
+.buttons {
+    padding: 10px;
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.footer {
+    text-align: center;
+}
+
+button {
+    height: 90px;
+    width: 90px;
+}
+
+.equal {
+    height: 90px;
+    width: 185px;
+}
