@@ -2,6 +2,7 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px;
     background-color: #e5e7eb;
+    overflow: hidden;
 }
 
 .header {
@@ -57,6 +58,9 @@ body {
     text-align: center;
     padding: 15px;
     background-color: #405cf5;
+    position: absolute;
+    bottom: 0;
+    width: 100%;
 }
 
 button {
