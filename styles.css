@@ -2,7 +2,8 @@ body {
     font-family: Verdana, Geneva, Tahoma, sans-serif;
     margin: 0px;
     background-color: #e5e7eb;
-    overflow: hidden;
+    overflow-x: hidden;
+    height: 100%;
 }
 
 .header {
