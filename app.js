@@ -12,15 +12,15 @@ const numberButtons = document.querySelectorAll(".number");
 const decimalButton = document.querySelector(".decimal");
 const equalButton = document.querySelector(".equal");
 
+window.addEventListener('keydown', handleKeyboard);
 clearButton.addEventListener('click', clearCalculator);
 deleteButton.addEventListener('click', deleteLastNumber);
-equalButton.addEventListener('click', equate);
+equalButton.addEventListener('click', evaluate);
 decimalButton.addEventListener('click', addDecimal);
 
 numberButtons.forEach((number) => {
     number.addEventListener('click', (e) => handleNumber(e.target.textContent));
 })
-
 operatorButtons.forEach((operator) => {
     operator.addEventListener('click', (e) => handleOperator(e.target.textContent));
 })
@@ -73,7 +73,7 @@ function deleteLastNumber() {
     }
 }
 
-function equate() {
+function evaluate() {
     if (currentOperator === "" || currentOperator === "=" || currentValue === "") return;
     previousDisplay.textContent = `${previousValue} ${currentOperator} ${currentValue} =`;
     if (previousDisplay.textContent.length >= 30) previousDisplay.classList.add("minimizeMax");
@@ -129,4 +129,13 @@ function displayError() {
     clearCalculator();
     errorMessage = false;
     currentDisplay.textContent = "Error";
+}
+
+function handleKeyboard(e) {
+    if (e.key >= 0 && e.key <= 9) handleNumber(e.key);
+    if (e.key === '.') addDecimal();
+    if (e.key === '=' || e.key === 'Enter') evaluate();
+    if (e.key === 'Backspace') deleteLastNumber();
+    if (e.key === 'Escape') clearCalculator();
+    if (e.key === '+' || e.key === '-' || e.key === '*' || e.key === '/') handleOperator(e.key);
 }
